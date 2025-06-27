@@ -1,0 +1,237 @@
+@charset "utf-8";
+
+/* Common */
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.section_title {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .section_title {
+    margin-bottom: 20px;
+  }
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 600px;
+  padding: 8px;
+  justify-content: center;
+}
+
+.navigator_list {
+  display: flex;
+  gap: 32px;
+}
+
+.navigator_list li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 20px 0 10px 0;
+    justify-content: center;
+  }
+
+  .navigator_list {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Hero */
+.hero {
+  background-image: url(../株式会社サクラ工業/AdobeStock_399909062.jpeg);
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.hero_inner {
+  font-size: 80px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 300px;
+    margin-bottom: 40px;
+  }
+
+  .hero_inner {
+    font-size: 36px;
+    padding: 0 16px;
+  }
+}
+
+/* Company */
+#company {
+  margin-bottom: 60px;
+}
+
+#company table {
+  border-collapse: collapse;
+  width: 50%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+#company table th,
+#company table td {
+  border-bottom: 1px dotted black;
+  padding: 24px 0;
+}
+
+#company table th {
+  font-weight: normal;
+  width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  #company {
+    margin-bottom: 50px;
+  }
+  
+  #company table {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+/* Message */
+#message {
+  margin-bottom: 60px;
+}
+
+.message_container {
+  width: 50%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.message_description {
+  line-height: 34px;
+  margin-bottom: 20px;
+}
+
+.profile_name_ja {
+  display: block;
+  text-align: end;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.profile_name_en {
+  display: block;
+  text-align: end;
+  font-size: 10px;
+  line-height: 1;
+  color: #0a449b;
+}
+
+@media screen and (max-width: 768px) {
+  #message {
+    margin-bottom: 50px;
+  }
+  
+  .message_container {
+    width: 90%;
+    padding: 0 16px;
+  }
+
+  .profile_name_ja {
+    font-size: 16px;
+  }
+
+  .profile_name_en {
+    font-size: 8px;
+  }
+}
+
+/* Achievement */
+#achievement {
+  margin-bottom: 60px;
+}
+
+#achievement ul {
+  line-height: 1.8;
+  width: fit-content;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  #achievement {
+    margin-bottom: 50px;
+  }
+  
+  #achievement ul {
+    padding: 0 16px;
+  }
+}
+
+/* Contact */
+#contact {
+  margin-bottom: 60px;
+}
+
+#contact p {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  #contact {
+    margin-bottom: 50px;
+  }  
+}
+
+/* Footer */
+footer {
+  margin: 0;
+  padding: 40px;
+  text-align: center;
+  background-color: darkgrey;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 20px;
+  }
+}
