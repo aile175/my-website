@@ -251,7 +251,7 @@ footer {
 
   .navigator_list {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     padding: 0;
     /* margin: 0px; */
   }
@@ -270,7 +270,7 @@ footer {
   }
 
   #company table {
-    width: 90%;
+    width: 95%;
     font-size: 16px;
     /* max-width: none;  */
   }
@@ -288,7 +288,7 @@ footer {
   }
 
   .message_container {
-    width: 90%;
+    width: 95%;
     /* max-width: none; */
   }
 
