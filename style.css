@@ -235,3 +235,81 @@ footer {
     padding: 20px;
   }
 }
+
+
+@media screen and (max-width: 400px) {
+
+  .section_title {
+    font-size: 14px;
+    /* margin-bottom: 16px; */
+  }
+
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navigator_list {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    /* margin: 10px; */
+  }
+
+  .hero {
+    height: 260px;
+    margin-bottom: 32px;
+  }
+
+  .hero_inner {
+    font-size: 28px;
+  }
+
+  #company {
+    margin-bottom: 32px;
+  }
+
+  #company table {
+    width: 90%;
+    font-size: 16px;
+    /* max-width: none;  */
+  }
+
+  #company table th {
+    width: 70px;
+  }
+
+  #company table td {
+    width: 20px;
+  }
+
+  #message {
+    margin-bottom: 50px;
+  }
+
+  .message_container {
+    width: 90%;
+    /* max-width: none; */
+  }
+
+  #achievement {
+    margin-bottom: 50px;
+  }
+
+  .profile_name_ja {
+    font-size: 14px;
+  }
+
+  .profile_name_en {
+    font-size: 7px;
+  }
+
+  #contact {
+    margin-bottom: 50px;
+  }
+
+  footer {
+    font-size: 16px;
+  }
+}
+
