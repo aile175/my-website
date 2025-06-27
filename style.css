@@ -262,7 +262,7 @@ footer {
   }
 
   .hero_inner {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   #company {
@@ -276,11 +276,11 @@ footer {
   }
 
   #company table th {
-    width: 70px;
+    width: 65px;
   }
 
   #company table td {
-    width: 10px;
+    width: 30px;
   }
 
   #message {
