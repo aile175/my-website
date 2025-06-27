@@ -251,9 +251,9 @@ footer {
 
   .navigator_list {
     display: flex;
-    gap: 16px;
+    gap: 15px;
     padding: 0;
-    /* margin: 10px; */
+    /* margin: 0px; */
   }
 
   .hero {
@@ -280,7 +280,7 @@ footer {
   }
 
   #company table td {
-    width: 20px;
+    width: 10px;
   }
 
   #message {
