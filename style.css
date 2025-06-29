@@ -217,10 +217,6 @@ footer {
   #company td {
     white-space: nowrap;
   }
-
-  html {
-    -wwebkit-text-size-adjust: 100%;
-  }
 }
 
 /* ===== メディアクエリ（スマホ） ===== */
@@ -255,7 +251,7 @@ footer {
   }
 
   .hero_inner p {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .profile_name_ja {
@@ -272,31 +268,35 @@ footer {
 }
 
 @media screen and (max-height: 480px) and (orientation: landscape) and (max-width: 896px) {
+  .navigator_list {
+    font-size: 16px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
   .hero_inner h2 {
-    font-size: 30px;
+    font-size: 64px;
   }
 
   .hero_inner p {
-    font-size: 16px;
+    font-size: 32px;
   }
 
   .section_title h2,
   .section_title p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   #contact p {
-    font-size: 13px;
-  }
-
-  .navigator_list {
-    font-size: 12px;
-    gap: 8px;
-    flex-wrap: wrap;
+    font-size: 16px;
   }
 
   footer {
     font-size: 12px;
+  }
+
+  html {
+    -wwebkit-text-size-adjust: 100%;
   }
 }
 
