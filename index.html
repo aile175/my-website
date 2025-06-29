@@ -1,126 +1,290 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@charset "utf-8";
 
-  <title>株式会社サクラ工業 | 電気設備工事における外構工事全般ならお任せ</title>
+/* ===== 共通設定 ===== */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
 
-  <meta name="description" content="株式会社サクラ工業は、電気設備工事における外構工事全般を専門とする企業です。">
-  <meta name="keywords" content="電気工事,電気設備,電気設備工事,設備,外構,工事,埼玉県,川口市">
-  
-  <link rel="icon" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
-</head>
+.section_title {
+  flex-direction: column;
+  margin-bottom: 40px;
+}
 
-<body>
+.section_title h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
 
-  <header>
-    <!-- <img src="logo-sp.png" alt="株式会社サクラ工業ロゴ" width="116" height="32"> -->
-    <h1>株式会社 サクラ工業</h1>
-    <nav>
-      <ul class="navigator_list">
-        <li><a href="#company">会社概要</a></li>
-        <li><a href="#message">代表ご挨拶</a></li>
-        <li><a href="#achievement">施工実績</a></li>
-        <li><a href="#contact">お問い合わせ</a></li>
-      </ul>
-    </nav>
-  </header>
+.section_title p {
+  font-size: 16px;
+  color: #555;
+}
 
-  <main>
+/* ===== ヘッダー ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: #f8f8f8;
+  flex-wrap: wrap;
+}
 
-    <section class="hero">
-      <div class="hero_inner">
-        <h2>Light to the People</h2>
-        <p>人々に光を</p>
-      </div>
-    </section>
+header h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-family: HiraMinProN-W6;
+}
 
-    <section id="company">
-      <header class="section_title">
-        <h2>COMPANY</h2>
-        <p>会社概要</p>
-      </header>
-      <table>
-        <tr>
-          <th>会社名</th>
-          <td>株式会社 サクラ工業</td>
-        </tr>
-        <!-- <tr><th>資本金</th><td>#</td></tr> -->
-        <tr>
-          <th>代表者</th>
-          <td>代表取締役 野田 大輔</td>
-        </tr>
-        <tr>
-          <th>住所</th>
-          <td>
-            <address>
-              〒334-0063<br>
-              埼玉県川口市大字東本郷803-25
-            </address>
-          </td>
-        </tr>
-        <tr>
-          <th>連絡先</th>
-          <td>048-278-8458</td>
-        </tr>
-        <tr>
-          <th>Email</th>
-          <td>d.noda6669@gmail.com</td>
-        </tr>
-        <tr>
-          <th>事業内容</th>
-          <td>電気設備工事における外構工事全般</td>
-        </tr>
-      </table>
-    </section>
+.navigator_list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    <section id="message">
-      <header class="section_title">
-        <h2>MESSAGE</h2>
-        <p>代表ご挨拶</p>
-      </header>
-      <div class="message_container">
-        <!-- <div class="profile-pic"></div> -->
-        <!-- <img src="" alt="野田 大輔"> -->
-        <p class="message_description">
-          ホームページをご覧いただき、ありがとうございます。私たちは「まじめに、ていねいに」を合言葉に、電気設備における外構工事の現場を一つひとつ丁寧に仕上げることを大切にしており、ありがたいことに多くのお客様から「またお願いしたい」というお声をいただいております。これからも、お客様との信頼関係を第一に、安心して任せていただけるパートナーを目指してまいります。小さなご相談でもお気軽にご連絡ください。
-        </p>
-        <div class="profile_name profile_name_sp">
-          <span class="profile_name_ja">野田 大輔</span>
-          <span class="profile_name_en">DAISUKE NODA</span>
-        </div>
-      </div>
-    </section>
+.navigator_list a {
+  text-decoration: none;
+  font-family: HiraMinProN-W6;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s;
+}
 
-    <section id="achievement">
-      <header class="section_title">
-        <h2>WORKS</h2>
-        <p>施工実績</p>
-      </header>
-      <ul>
-        <li>IKEA前橋</li>
-        <li>アイリスオーヤマ埼玉工場</li>
-        <li>JRA美浦トレーニング・センター</li>
-        <li>AEON MALL須坂新築工事</li>
-      </ul>
-    </section>
+.navigator_list a:hover {
+  color: #0a449b;
+}
 
-    <section id="contact">
-      <header class="section_title">
-        <h2>CONTACT</h2>
-        <p>お問い合わせ</p>
-      </header>
-      <p>TEL・FAX: <a href="tel:0482788458">048-278-8458</a></p>
-      <p>Email: <a href="mailto:d.noda6669@gmail.com">d.noda6669@gmail.com</a></p>
-    </section>
+/* ===== ヒーローセクション ===== */
+.hero {
+  background-image: url(electrical-room-optimized.webp);
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  color: black;
+  filter: brightness(1.1);
+}
 
-  </main>
+.hero_inner {
+  text-align: center;
+}
 
-  <footer>
-    <small>©️ 2025 株式会社サクラ工業 All rights reserved.</small>
-  </footer>
+.hero_inner h2 {
+  font-family: "Arial Black";
+  font-size: 80px;
+}
 
-</body>
-</html>
+.hero_inner p {
+  font-size: 48px;
+}
+
+/* ===== 会社情報セクション ===== */
+#company {
+  margin-bottom: 60px;
+}
+
+#company table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#company th, #company td {
+  border-bottom: 1px dotted #333;
+  padding: 16px 8px;
+  text-align: left;
+}
+
+#company th {
+  width: 35%;
+  font-weight: normal;
+  color: #333;
+}
+
+/* ===== メッセージ ===== */
+#message {
+  margin-bottom: 60px;
+}
+
+.message_container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.message_description {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.profile_name_ja {
+  display: block;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.profile_name_en {
+  display: block;
+  text-align: right;
+  font-size: 10px;
+  color: #0a449b;
+}
+
+/* ===== 実績 ===== */
+#achievement {
+  margin-bottom: 60px;
+}
+
+#achievement ul {
+  list-style: disc inside;
+  padding-left: 0;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* ===== お問い合わせ ===== */
+#contact {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+#contact a {
+  color: #0a449b;
+}
+
+/* ===== フッター ===== */
+footer {
+  background-color: #d3d3d3;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ===== メディアクエリ（タブレット） ===== */
+@media screen and (max-width: 768px) {
+  .section_title {
+    margin-bottom: 32px;
+    gap: 0;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .navigator_list {
+    font-size: 15px;
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    height: 320px;
+  }
+
+  .hero_inner h2 {
+    font-size: 40px;
+  }
+
+  .hero_inner p {
+    font-size: 16px;
+  }
+
+  .message_container,
+  #company table {
+    width: 95%;
+  }
+
+  #company td {
+    white-space: nowrap;
+  }
+}
+
+/* ===== メディアクエリ（スマホ） ===== */
+@media screen and (max-width: 400px) {
+  .section_title h2 {
+    font-size: 18px;
+  }
+
+  .section_title p {
+    font-size: 14px;
+  }
+
+  .navigator_list {
+    font-size: 14px;
+    gap: 14px;
+  }
+
+  .hero {
+    height: 260px;
+  }
+
+  .hero_inner h2 {
+    font-size: 32px;
+  }
+
+  .hero_inner p {
+    font-size: 20px;
+  }
+
+  .profile_name_ja {
+    font-size: 14px;
+  }
+
+  .profile_name_en {
+    font-size: 7px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-height: 480px) and (orientation: landscape) and (max-width: 896px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero_inner h2 {
+    font-size: 30px;
+  }
+
+  .hero_inner p {
+    font-size: 16px;
+  }
+
+  .section_title h2,
+  .section_title p {
+    font-size: 14px;
+  }
+
+  #contact p {
+    font-size: 13px;
+  }
+
+  .navigator_list {
+    font-size: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
