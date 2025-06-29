@@ -226,6 +226,13 @@ footer {
     font-size: 14px;
   }
 
+  .navigator_list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    font-size: 13px;
+    gap: 12px;
+  }
+  
   .hero {
     height: 260px;
   }
