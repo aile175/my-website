@@ -1,299 +1,241 @@
 @charset "utf-8";
 
-/* Common */
-body {
+/* ===== 共通設定 ===== */
+body, h1, h2, h3, p {
   margin: 0;
-}
-
-h1 {
-  margin: 0;
-}
-
-h2 {
-  margin: 0;
-}
-
-h3 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
+  padding: 0;
 }
 
 .section_title {
-  font-size: 16px;
-  text-align: center;
+  flex-direction: column;
   margin-bottom: 40px;
 }
 
-@media screen and (max-width: 768px) {
-  .section_title {
-    margin-bottom: 20px;
-  }
+.section_title h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
-/* Header */
+.section_title p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* ===== ヘッダー ===== */
 header {
   display: flex;
   align-items: center;
-  gap: 600px;
-  padding: 8px;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: #f8f8f8;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-family: HiraMinProN-W6;
 }
 
 .navigator_list {
   display: flex;
-  gap: 32px;
-}
-
-.navigator_list li {
+  gap: 24px;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-a {
+.navigator_list a {
   text-decoration: none;
-  color: inherit;
+  font-family: HiraMinProN-W6;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s;
 }
 
-@media screen and (max-width: 768px) {
-  header {
-    gap: 5px;
-    flex-wrap: wrap;
-    padding: 20px 0 10px 0;
-    justify-content: center;
-  }
-
-  .navigator_list {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
+.navigator_list a:hover {
+  color: #0a449b;
 }
 
-/* Hero */
+/* ===== ヒーローセクション ===== */
 .hero {
-  background-image: url(AdobeStock_399909062.jpeg);
+  background-image: url(electrical-room-optimized.webp);
   background-position: center;
   background-size: cover;
   height: 600px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 60px;
+  color: black;
+  filter: brightness(1.1);
 }
 
 .hero_inner {
-  font-size: 80px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  width: 100%;
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  .hero {
-    height: 300px;
-    margin-bottom: 40px;
-  }
-
-  .hero_inner {
-    font-size: 36px;
-    padding: 0 16px;
-  }
+.hero_inner h2 {
+  font-family: "Arial Black";
+  font-size: 80px;
 }
 
-/* Company */
+.hero_inner p {
+  font-size: 48px;
+}
+
+/* ===== 会社情報セクション ===== */
 #company {
   margin-bottom: 60px;
 }
 
 #company table {
   border-collapse: collapse;
-  width: 50%;
-  max-width: 1120px;
+  width: 90%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-#company table th,
-#company table td {
-  border-bottom: 1px dotted black;
-  padding: 24px 0;
+#company th, #company td {
+  border-bottom: 1px dotted #333;
+  padding: 16px 8px;
+  text-align: left;
 }
 
-#company table th {
+#company th {
+  width: 35%;
   font-weight: normal;
-  width: 40%;
+  color: #333;
 }
 
-@media screen and (max-width: 768px) {
-  #company {
-    margin-bottom: 50px;
-  }
-  
-  #company table {
-    width: 95%;
-    margin: 0 auto;
-  }
-}
-
-/* Message */
+/* ===== メッセージ ===== */
 #message {
   margin-bottom: 60px;
 }
 
 .message_container {
-  width: 50%;
-  max-width: 1120px;
+  width: 90%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .message_description {
-  line-height: 34px;
   margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .profile_name_ja {
   display: block;
-  text-align: end;
-  font-size: 20px;
-  line-height: 1;
-  font-weight: 700;
-  margin-bottom: 8px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
 .profile_name_en {
   display: block;
-  text-align: end;
+  text-align: right;
   font-size: 10px;
-  line-height: 1;
   color: #0a449b;
 }
 
-@media screen and (max-width: 768px) {
-  #message {
-    margin-bottom: 50px;
-  }
-  
-  .message_container {
-    width: 90%;
-    padding: 0 16px;
-  }
-
-  .profile_name_ja {
-    font-size: 16px;
-  }
-
-  .profile_name_en {
-    font-size: 8px;
-  }
-}
-
-/* Achievement */
+/* ===== 実績 ===== */
 #achievement {
   margin-bottom: 60px;
 }
 
 #achievement ul {
-  line-height: 1.8;
+  list-style: disc inside;
+  padding-left: 0;
   width: fit-content;
-  margin: auto;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
-  #achievement {
-    margin-bottom: 50px;
-  }
-  
-  #achievement ul {
-    padding: 0 16px;
-  }
-}
-
-/* Contact */
+/* ===== お問い合わせ ===== */
 #contact {
   margin-bottom: 60px;
-}
-
-#contact p {
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  #contact {
-    margin-bottom: 50px;
-  }  
+#contact a {
+  color: #0a449b;
 }
 
-/* Footer */
+/* ===== フッター ===== */
 footer {
-  margin: 0;
-  padding: 40px;
+  background-color: #d3d3d3;
+  padding: 40px 20px;
   text-align: center;
-  background-color: darkgrey;
+  font-size: 14px;
 }
 
+/* ===== メディアクエリ（タブレット） ===== */
 @media screen and (max-width: 768px) {
-  footer {
-    padding: 20px;
-  }
-}
-
-
-@media screen and (max-width: 400px) {
-
   .section_title {
-    font-size: 14px;
-    /* margin-bottom: 16px; */
+    margin-bottom: 32px;
+    gap: 0;
   }
 
   header {
     flex-direction: column;
-    justify-content: center;
+    gap: 15px;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 20px;
   }
 
   .navigator_list {
-    display: flex;
-    gap: 16px;
-    padding: 0;
-    /* margin: 0px; */
+    font-size: 15px;
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    height: 320px;
+  }
+
+  .hero_inner h2 {
+    font-size: 40px;
+  }
+
+  .hero_inner p {
+    font-size: 16px;
+  }
+
+  .message_container,
+  #company table {
+    width: 95%;
+  }
+
+  #company td {
+    white-space: nowrap;
+  }
+
+}
+
+/* ===== メディアクエリ（スマホ） ===== */
+@media screen and (max-width: 400px) {
+  .section_title h2 {
+    font-size: 18px;
+  }
+
+  .section_title p {
+    font-size: 14px;
   }
 
   .hero {
     height: 260px;
-    margin-bottom: 32px;
   }
 
-  .hero_inner {
+  .hero_inner h2 {
     font-size: 30px;
   }
 
-  #company {
-    margin-bottom: 32px;
-  }
-
-  #company table {
-    width: 95%;
-    font-size: 16px;
-    /* max-width: none;  */
-  }
-
-  #company table th {
-    width: 65px;
-  }
-
-  #company table td {
-    width: 30px;
-  }
-
-  #message {
-    margin-bottom: 50px;
-  }
-
-  .message_container {
-    width: 90%;
-    /* max-width: none; */
-  }
-
-  #achievement {
-    margin-bottom: 50px;
+  .hero_inner p {
+    font-size: 20px;
   }
 
   .profile_name_ja {
@@ -304,12 +246,7 @@ footer {
     font-size: 7px;
   }
 
-  #contact {
-    margin-bottom: 50px;
-  }
-
   footer {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
-
