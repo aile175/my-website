@@ -9,6 +9,7 @@ body, h1, h2, h3, p {
 .section_title {
   flex-direction: column;
   margin-bottom: 40px;
+  background-color: #f8f8f8;
 }
 
 .section_title h2 {
@@ -27,7 +28,6 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px;
-  background-color: #f8f8f8;
   flex-wrap: wrap;
 }
 
@@ -193,6 +193,10 @@ footer {
     justify-content: center;
   }
 
+  .navigator_list a:hover {
+    color: #333;
+  }
+
   .hero {
     height: 320px;
   }
@@ -213,10 +217,18 @@ footer {
   #company td {
     white-space: nowrap;
   }
+
+  html {
+    -wwebkit-text-size-adjust: 100%;
+  }
 }
 
 /* ===== メディアクエリ（スマホ） ===== */
 @media screen and (max-width: 400px) {
+  .section_title {
+    padding: 16px 32px;
+  }
+  
   .section_title h2 {
     font-size: 18px;
   }
@@ -225,9 +237,13 @@ footer {
     font-size: 14px;
   }
 
+  header {
+    padding: 20px 0;
+  }
+
   .navigator_list {
-    font-size: 14px;
-    gap: 14px;
+    font-size: 16px;
+    gap: 13px;
   }
 
   .hero {
@@ -256,10 +272,6 @@ footer {
 }
 
 @media screen and (max-height: 480px) and (orientation: landscape) and (max-width: 896px) {
-  body {
-    font-size: 14px;
-  }
-
   .hero_inner h2 {
     font-size: 30px;
   }
