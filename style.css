@@ -279,10 +279,6 @@ footer {
 }
 
 @media screen and (orientation: landscape) and(max-height: 480px) {
-  #contact a {
-    font-size: 14px !important;
-  }
-
   .navigator_list {
     font-size: 16px;
     gap: 20px;
@@ -300,13 +296,6 @@ footer {
   .section_title h2,
   .section_title p {
     font-size: 16px;
-  }
-
-  .message_description {
-    font-size: 14px;
-    line-height: 1.6;
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
   }
 }
 
