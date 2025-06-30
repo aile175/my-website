@@ -294,13 +294,8 @@ footer {
     font-size: 16px;
   }
 
-  .profile_name_ja {
-    font-size: 14px;
-    margin-bottom: 2px;
-  }
-
-  .profile_name_en {
-    font-size: 7px;
+  #contact a {
+    font-size: 16px;
   }
 }
 
