@@ -1,14 +1,12 @@
 @charset "utf-8";
 
 /* ===== 共通設定 ===== */
-h1, h2, h3, p {
+body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -41,7 +39,7 @@ header {
 header h1 {
   font-size: 32px;
   letter-spacing: 1px;
-  font-family: HiraMinProN-W6;
+  font-family: "Hiragino Mincho ProN", "HiraMinProN-W6", serif;
 }
 
 .navigator_list {
@@ -279,6 +277,14 @@ footer {
 }
 
 @media screen and (orientation: landscape) and(max-height: 480px) {
+  #contact p {
+    font-size: 16px !important;
+  }
+
+  #contact a {
+    font-size: 16px !important;
+  }
+
   .navigator_list {
     font-size: 16px;
     gap: 20px;
@@ -296,6 +302,13 @@ footer {
   .section_title h2,
   .section_title p {
     font-size: 16px;
+  }
+
+  .message_description {
+    font-size: 16x;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 }
 
