@@ -9,7 +9,7 @@ body, h1, h2, h3, p {
 .section_title {
   flex-direction: column;
   margin-bottom: 40px;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
 }
 
 .section_title h2 {
@@ -24,6 +24,7 @@ body, h1, h2, h3, p {
 
 /* ===== ヘッダー ===== */
 header {
+  background-color: #f8f8f8;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -158,6 +159,7 @@ header h1 {
 }
 
 #contact a {
+  font-size: 16px;
   color: #0a449b;
 }
 
@@ -256,6 +258,7 @@ footer {
 
   .profile_name_ja {
     font-size: 14px;
+    margin-bottom: 2px;
   }
 
   .profile_name_en {
@@ -268,14 +271,13 @@ footer {
 }
 
 @media screen and (max-height: 480px) and (orientation: landscape) and (max-width: 896px) {
-  /* header h1 {
-    font-size: ;
-  } */
+  body {
+    font-size: 16px;
+  }
   
   .navigator_list {
     font-size: 16px;
     gap: 20px;
-    font-weight: bold;
     flex-wrap: wrap;
   }
   
@@ -284,7 +286,7 @@ footer {
   }
 
   .hero_inner p {
-    font-size: 20px;
+    font-size: 32px;
   }
 
   .section_title h2,
@@ -292,12 +294,13 @@ footer {
     font-size: 16px;
   }
 
-  #contact p {
-    font-size: 16px;
+  .profile_name_ja {
+    font-size: 14px;
+    margin-bottom: 2px;
   }
 
-  footer {
-    font-size: 12px;
+  .profile_name_en {
+    font-size: 7px;
   }
 }
 
