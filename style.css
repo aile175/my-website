@@ -161,6 +161,7 @@ header h1 {
 #contact a {
   font-size: 16px;
   color: #0a449b;
+  -webkit-text-size-adjust: none;
 }
 
 /* ===== フッター ===== */
@@ -271,10 +272,6 @@ footer {
 }
 
 @media screen and (max-height: 480px) and (orientation: landscape) and (max-width: 896px) {
-  body {
-    font-size: 16px;
-  }
-  
   .navigator_list {
     font-size: 16px;
     gap: 20px;
@@ -291,10 +288,6 @@ footer {
 
   .section_title h2,
   .section_title p {
-    font-size: 16px;
-  }
-
-  #contact a {
     font-size: 16px;
   }
 }
