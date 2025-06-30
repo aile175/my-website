@@ -1,15 +1,21 @@
 @charset "utf-8";
 
 /* ===== 共通設定 ===== */
-body, h1, h2, h3, p {
+h1, h2, h3, p {
   margin: 0;
   padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .section_title {
   flex-direction: column;
   margin-bottom: 40px;
-  /* background-color: #f8f8f8; */
 }
 
 .section_title h2 {
@@ -161,7 +167,6 @@ header h1 {
 #contact a {
   font-size: 16px;
   color: #0a449b;
-  -webkit-text-size-adjust: none;
 }
 
 /* ===== フッター ===== */
@@ -187,11 +192,12 @@ footer {
 
   header h1 {
     font-size: 20px;
+    text-align: center;
   }
 
   .navigator_list {
-    font-size: 15px;
-    gap: 13px;
+    font-size: 14px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -219,6 +225,7 @@ footer {
 
   #company td {
     white-space: nowrap;
+    word-break: keep-all;
   }
 }
 
@@ -271,7 +278,11 @@ footer {
   }
 }
 
-@media screen and (max-height: 480px) and (orientation: landscape) and (max-width: 896px) {
+@media screen and (orientation: landscape) and(max-height: 480px) {
+  #contact a {
+    font-size: 14px !important;
+  }
+
   .navigator_list {
     font-size: 16px;
     gap: 20px;
@@ -289,6 +300,13 @@ footer {
   .section_title h2,
   .section_title p {
     font-size: 16px;
+  }
+
+  .message_description {
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 }
 
