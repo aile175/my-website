@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.sakura-kogyo.jp/sitemap.xml
