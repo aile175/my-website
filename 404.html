@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - ページが見つかりません｜株式会社サクラ工業</title>
+    <meta name="description" content="お探しのページは見つかりませんでした。株式会社サクラ工業のトップページへお戻りください。">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0a1628">
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="assets/images/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header scrolled" id="header" role="banner">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="株式会社サクラ工業 トップページへ">
+                <span class="logo-main">SAKURA</span>
+                <span class="logo-sub">KOGYO</span>
+            </a>
+            <nav class="nav" id="nav" role="navigation" aria-label="メインナビゲーション">
+                <!-- Decorative Corner Elements -->
+                <div class="mobile-nav-decor mobile-nav-decor--top-left" aria-hidden="true"></div>
+                <div class="mobile-nav-decor mobile-nav-decor--top-right" aria-hidden="true"></div>
+                <div class="mobile-nav-decor mobile-nav-decor--bottom-left" aria-hidden="true"></div>
+                <div class="mobile-nav-decor mobile-nav-decor--bottom-right" aria-hidden="true"></div>
+                
+                <!-- Particle Canvas -->
+                <canvas class="mobile-nav-canvas" id="mobileNavCanvas" aria-hidden="true"></canvas>
+
+                <!-- Mobile Nav Header -->
+                <div class="mobile-nav-header">
+                    <div class="mobile-nav-logo">
+                        <span class="mobile-nav-logo-main">SAKURA</span>
+                        <span class="mobile-nav-logo-sub">KOGYO</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <ul class="nav-list">
+                    <li>
+                        <a href="index.html#company" class="nav-link">
+                            <span class="nav-link-number">01</span>
+                            <span class="nav-link-text">
+                                <span class="nav-link-label">Company</span>
+                                <span class="nav-link-jp">会社概要</span>
+                            </span>
+                            <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#message" class="nav-link">
+                            <span class="nav-link-number">02</span>
+                            <span class="nav-link-text">
+                                <span class="nav-link-label">Message</span>
+                                <span class="nav-link-jp">代表ご挨拶</span>
+                            </span>
+                            <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#works" class="nav-link">
+                            <span class="nav-link-number">03</span>
+                            <span class="nav-link-text">
+                                <span class="nav-link-label">Works</span>
+                                <span class="nav-link-jp">施工実績</span>
+                            </span>
+                            <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact" class="nav-link nav-link--contact">
+                            <span class="nav-link-number">04</span>
+                            <span class="nav-link-text">
+                                <span class="nav-link-label">Contact</span>
+                                <span class="nav-link-jp">お問い合わせ</span>
+                            </span>
+                            <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Nav Footer -->
+                <div class="mobile-nav-footer">
+                    <div class="mobile-nav-divider" aria-hidden="true"></div>
+                    <p class="mobile-nav-copyright">SAKURA KOGYO Inc.</p>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+                <div class="hamburger-inner">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="error-page">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="error-content">
+                <p class="error-code">404</p>
+                <h1 class="error-title">ページが見つかりません</h1>
+                <p class="error-description">
+                    お探しのページは移動または削除された可能性があります。<br>
+                    URLをご確認いただくか、トップページからお探しください。
+                </p>
+                <a href="index.html" class="btn btn--primary">
+                    <span>トップページへ戻る</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><a href="index.html" class="footer-logo" aria-label="株式会社サクラ工業 トップページへ"><span class="footer-logo-main">SAKURA</span><span class="footer-logo-sub">KOGYO</span></a><p class="footer-tagline">Light to the People<br>人々に光を</p></div>
+                <nav class="footer-nav" aria-label="フッターナビゲーション"><ul class="footer-nav-list"><li><a href="index.html#company">会社概要</a></li><li><a href="index.html#message">代表ご挨拶</a></li><li><a href="index.html#works">施工実績</a></li><li><a href="index.html#contact">お問い合わせ</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ul></nav>
+            </div>
+            <div class="footer-bottom"><p class="footer-copyright"><small>&copy; 2025 株式会社サクラ工業 All Rights Reserved.</small></p></div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
