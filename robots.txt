@@ -9,6 +9,3 @@ Allow: /
 
 # 検索エンジンにsitemapの場所を通知
 Sitemap: https://www.sakura-kogyo.jp/sitemap.xml
-
-# クロール頻度の指示（任意）
-Crawl-delay: 1

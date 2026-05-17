@@ -1,38 +1,42 @@
-# 株式会社サクラ工業 コーポレートサイト
+# 株式会社サクラ工業 公式サイト
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?logo=github&logoColor=white)
+## 概要
+株式会社サクラ工業の公式コーポレートサイトです。
 
-## サイト概要
+🌐 **公開URL**: [https://www.sakura-kogyo.jp](https://www.sakura-kogyo.jp)
 
-**株式会社サクラ工業**のコーポレートサイトです。  
-埼玉県川口市を拠点に、電気設備工事における外構工事を手がける専門会社の魅力を伝えるため、  
-「**人々に光を**」というコンセプトのもと、洗練されたデザインと高いパフォーマンスを両立しました。
+## 目的
+取引先確認・関係者との情報共有を主な目的とした会社情報の公開サイトです。
+集客・営業を目的としたサイトではありません。
 
-🌐 **Live Site**: [https://www.sakura-kogyo.jp](https://www.sakura-kogyo.jp)
+## 掲載内容
+- 会社概要（会社名・代表者・資本金・所在地・事業内容・連絡先）
+- 代表挨拶
+- 主な現場名（4件）
+- 連絡先（電話・メール）
 
----
+## 非掲載の情報
+- 建設業許可番号（未確認のため非掲載）
+- 設立年月（未確認のため非掲載）
+- 施工写真（素材提供なしのため、現在は未掲載。主な現場名のみ掲載）
+- 問い合わせフォーム（非設置）
+
+## 制作
+國分Web製作所（静的サイト）
+限られた素材の中で、会社情報・事業内容・所在地・連絡先を整理した初期HPとして制作しました。
+
+## 運用メモ
+本サイトは、株式会社サクラ工業より継続的な改修許可を得たうえで、会社情報確認用サイトとして必要に応じて改善しています。
 
 ## 使用技術
 
 | カテゴリ | 技術 |
 |---------|------|
-| **マークアップ** | HTML5 (Semantic HTML) |
-| **スタイリング** | CSS3 (CSS Custom Properties / CSS Variables) |
-| **スクリプト** | Vanilla JavaScript (ES6+) |
-| **ホスティング** | GitHub Pages |
-| **フォント** | Google Fonts (Noto Sans JP, Noto Serif JP, Outfit) |
-
-### フレームワーク・ライブラリ不使用の理由
-
-- **軽量・高速**: 外部依存を排除し、最小限のファイルサイズを実現
-- **保守性**: ライブラリのバージョン管理やセキュリティ更新が不要
-- **学習コスト**: 引き継ぎ時の学習コストを最小化
-
----
+| マークアップ | HTML5 |
+| スタイリング | CSS3（CSS Custom Properties） |
+| スクリプト | Vanilla JavaScript |
+| ホスティング | GitHub Pages |
+| フォント | Google Fonts (Noto Sans JP, Noto Serif JP, Outfit) |
 
 ## ディレクトリ構成
 
@@ -45,9 +49,9 @@ sakura-kogyo-v2/
 │   ├── css/
 │   │   └── style.css
 │   ├── images/
-│   │   ├── favicon-source.png
+│   │   ├── favicon/
 │   │   ├── ogp.jpg
-│   │   └── (その他の画像ファイル...)
+│   │   └── (実績画像 / イメージ画像)
 │   └── js/
 │       └── main.js
 ├── index.html
@@ -56,120 +60,15 @@ sakura-kogyo-v2/
 └── sitemap.xml
 ```
 
----
-
-## こだわりポイント
-
-### 1. パフォーマンス最適化
-
-- **CSS/JSの外部化**: キャッシュ効率を最大化
-- **Google Fontsの最適化**: `preconnect` による接続の事前確立
-- **Intersection Observer**: 画面外の要素はアニメーションを停止し、GPU負荷を軽減
-- **requestAnimationFrame**: スクロールイベントをデバウンス処理
-
-### 2. サーバーレス運用 (GitHub Pages)
-
-- **ゼロコスト運用**: 独自ドメイン以外の維持費不要
-- **高可用性**: GitHubのCDNによる安定配信
-- **シンプルなデプロイ**: `git push` のみで本番反映
-- **`.nojekyll`配置**: Jekyllビルドをスキップし、そのまま配信
-
-### 3. Canvas パーティクルアニメーション
-
-- **ヒーローセクション**: 接続線を持つ幻想的なパーティクル
-- **モバイルナビゲーション**: メニュー展開時の没入感演出
-- **パフォーマンス配慮**: 
-  - 画面サイズに応じたパーティクル数の動的調整
-  - 画面外では `cancelAnimationFrame` でアニメーション停止
-
-### 4. SEO / ローカルSEO対策
-
-- **構造化データ (JSON-LD)**: LocalBusiness / ElectricalContractor スキーマ
-- **OGP完備**: LINE / X / Facebook でのシェア最適化
-- **Geo Tags**: 地域検索での上位表示を狙う
-- **セマンティックHTML**: 適切な見出し階層、WAI-ARIA属性
-
-### 5. アクセシビリティ (WCAG 2.1 AA準拠を目指す)
-
-- **キーボードナビゲーション**: ESCキーでモバイルメニュー閉じる
-- **ARIA属性**: `aria-label`, `aria-expanded`, `aria-controls` の適切な使用
-- **スクリーンリーダー対応**: 装飾要素に `aria-hidden="true"`
-- **フォーカス管理**: 視覚的なフォーカスインジケーター
-
-### 6. レスポンシブデザイン
-
-- **モバイルファースト**: 900px以下で専用ナビゲーション
-- **iPhone SE対応**: 横画面での特別な調整
-- **CSS clamp()**: 流動的なフォントサイズ
-
----
-
-## ローカル開発
+## ローカル確認
 
 ```bash
-# リポジトリをクローン
-git clone https://github.com/your-username/sakura-kogyo.git
-cd sakura-kogyo
-
-# ローカルサーバーで起動（Python 3の場合）
+# プロジェクトルートで簡易サーバーを起動（Python 3 の場合）
 python -m http.server 8000
 
 # ブラウザで確認
 open http://localhost:8000
 ```
 
----
-
-## デプロイ
-
-### GitHub Pages
-
-1. リポジトリの `Settings` → `Pages` を開く
-2. Source を `main` ブランチ、`/ (root)` に設定
-3. `Save` をクリック
-4. 数分後、`https://your-username.github.io/sakura-kogyo/` で公開
-
-### カスタムドメイン
-
-1. DNSにCNAMEレコードを設定: `www` → `your-username.github.io`
-2. GitHub Pages設定で Custom domain を入力
-3. `Enforce HTTPS` にチェック
-
----
-
-## ブラウザサポート
-
-| ブラウザ | バージョン |
-|---------|-----------|
-| Chrome | 最新2バージョン |
-| Firefox | 最新2バージョン |
-| Safari | 最新2バージョン |
-| Edge | 最新2バージョン |
-| iOS Safari | 最新2バージョン |
-| Chrome Android | 最新2バージョン |
-
----
-
 ## ライセンス
-
-このプロジェクトはMITライセンスの下で公開されています。
-
----
-
-## 制作者
-
-**Yuki** - Web Designer / Frontend Engineer
-
----
-
-## 謝辞
-
-- [Google Fonts](https://fonts.google.com/) - 美しい日本語フォント
-- [GitHub Pages](https://pages.github.com/) - 無料ホスティング
-
----
-
-<p align="center">
-  <strong>Light to the People - 人々に光を</strong><br>
-  <small>&copy; 2025 株式会社サクラ工業</small>
-</p>
+このリポジトリのソースコードは個別に取り決めがない限り社内利用を想定しています。
