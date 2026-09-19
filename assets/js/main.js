@@ -1,181 +1,119 @@
-/**
- * ============================================
- * 株式会社サクラ工業 コーポレートサイト
- * 共通JavaScript
- * ============================================
- * Version: 1.0.0
- * Last Updated: 2025
- * Author: SAKURA KOGYO Inc.
- * ============================================
- */
-
+/* Shared interactions. Content stays accessible when JavaScript is unavailable. */
 'use strict';
 
-/**
- * DOMContentLoaded時に全機能を初期化
- */
-document.addEventListener('DOMContentLoaded', () => {
-    initHeader();
-    initMobileNav();
-    initScrollAnimations();
-    initBackToTop();
-    initSmoothScroll();
-});
+document.documentElement.classList.add('js');
 
-/**
- * ============================================
- * Header Scroll Effect
- * ============================================
- */
-function initHeader() {
-    const header = document.getElementById('header');
-    if (!header) return;
-    
-    let ticking = false;
-    
-    function updateHeader() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        ticking = false;
-    }
-    
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(updateHeader);
-            ticking = true;
-        }
-    });
-    
-    updateHeader();
-}
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-/**
- * ============================================
- * Mobile Navigation Toggle
- * ============================================
- */
-function initMobileNav() {
-    const hamburger = document.getElementById('hamburger');
+function initNavigation() {
+    const toggle = document.getElementById('menuToggle');
     const nav = document.getElementById('nav');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    if (!hamburger || !nav) return;
+    if (!toggle || !nav) return;
 
-    function setNavOpen(isOpen) {
-        hamburger.classList.toggle('active', isOpen);
-        nav.classList.toggle('active', isOpen);
-        document.documentElement.classList.toggle('nav-open', isOpen);
-        document.body.classList.toggle('nav-open', isOpen);
-        hamburger.setAttribute('aria-expanded', String(isOpen));
+    const mobile = window.matchMedia('(max-width: 880px)');
+    const links = [...nav.querySelectorAll('a')];
+    const background = [document.querySelector('main'), document.querySelector('footer'), document.querySelector('.header .brand')].filter(Boolean);
+    let open = false;
+
+    function setOpen(next, returnFocus = false) {
+        open = next && mobile.matches;
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+        toggle.querySelector('.menu-toggle-label').textContent = open ? 'CLOSE' : 'MENU';
+        document.documentElement.classList.toggle('nav-open', open);
+        background.forEach(element => { element.inert = open; });
+        if (open) links[0]?.focus();
+        else if (returnFocus) toggle.focus();
     }
 
-    hamburger.addEventListener('click', () => {
-        const isActive = !nav.classList.contains('active');
-        setNavOpen(isActive);
-    });
+    toggle.addEventListener('click', () => setOpen(!open, open));
+    links.forEach(link => link.addEventListener('click', () => setOpen(false)));
+    mobile.addEventListener('change', () => setOpen(false));
+    window.addEventListener('pageshow', () => setOpen(false));
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            setNavOpen(false);
-        });
-    });
-
-    // ESCキーでメニューを閉じる
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && nav.classList.contains('active')) {
-            setNavOpen(false);
+    document.addEventListener('keydown', event => {
+        if (!open) return;
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            setOpen(false, true);
         }
-    });
-}
-
-/**
- * ============================================
- * Scroll Animations (Intersection Observer)
- * ============================================
- */
-function initScrollAnimations() {
-    const els = document.querySelectorAll('[data-animate]');
-    if (!els.length) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-                observer.unobserve(entry.target);
+        if (event.key === 'Tab') {
+            const first = links[0];
+            // In document order, the toggle follows the navigation links.
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                toggle.focus();
+            } else if (!event.shiftKey && document.activeElement === toggle) {
+                event.preventDefault();
+                first?.focus();
             }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    els.forEach(el => observer.observe(el));
-}
-
-/**
- * ============================================
- * Back to Top Button
- * ============================================
- */
-function initBackToTop() {
-    const btn = document.getElementById('backToTop');
-    if (!btn) return;
-    
-    let ticking = false;
-    
-    function update() {
-        if (window.scrollY > 500) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
         }
-        ticking = false;
-    }
-    
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(update);
-            ticking = true;
-        }
-    });
-    
-    btn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
     });
 }
 
-/**
- * ============================================
- * Smooth Scroll for Anchor Links
- * ============================================
- */
-function initSmoothScroll() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href === '#') return;
-            
-            const target = document.querySelector(href);
+function initAnchorFocus() {
+    // Keep native anchor scrolling and browser history, while moving keyboard focus.
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', event => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+            const id = link.getAttribute('href').slice(1);
+            const target = document.getElementById(id);
             if (!target) return;
-            
-            e.preventDefault();
-            
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - headerOffset;
-            
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
+            requestAnimationFrame(() => {
+                target.setAttribute('tabindex', '-1');
+                target.focus({ preventScroll: true });
             });
         });
     });
 }
+
+function initReveals() {
+    if (reduceMotion.matches || !('IntersectionObserver' in window)) return;
+    const elements = [...document.querySelectorAll('[data-reveal]')];
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.remove('reveal-pending');
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0, rootMargin: '0px 0px 24px 0px' });
+
+    elements.forEach(element => {
+        // Anchor destinations and anything already visible never start hidden.
+        if (element.getBoundingClientRect().top > window.innerHeight) {
+            element.classList.add('reveal-pending');
+            observer.observe(element);
+        }
+    });
+    reduceMotion.addEventListener('change', event => {
+        if (!event.matches) return;
+        elements.forEach(element => element.classList.remove('reveal-pending'));
+        observer.disconnect();
+    });
+}
+
+function initSectionNavigation() {
+    if (!('IntersectionObserver' in window)) return;
+    const links = [...document.querySelectorAll('.nav-link[href^="#"]')];
+    if (!links.length) return;
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            links.forEach(link => {
+                if (link.getAttribute('href') === `#${entry.target.id}`) {
+                    link.setAttribute('aria-current', 'location');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        });
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    document.querySelectorAll('main > section[id]').forEach(section => observer.observe(section));
+}
+
+initNavigation();
+initAnchorFocus();
+initReveals();
+initSectionNavigation();
