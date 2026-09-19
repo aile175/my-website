@@ -38,12 +38,23 @@
 | ホスティング | GitHub Pages |
 | フォント | Google Fonts (Noto Sans JP, Noto Serif JP, Outfit) |
 
+## デザイン改修（2026年9月19日）
+
+- 深いグリーン・生成り・淡いライムを基調に、トップページの構成・文字組み・ナビゲーションを刷新。
+- 事業を表すオリジナルのSVG図版を追加。実際の施工写真や特定の現場を再現した図ではありません。
+- 事業内容、主な現場名、会社概要、代表挨拶、お問い合わせの順に情報を整理。
+- スマートフォンのメニュー、キーボード操作、動きを抑える設定、JavaScript無効時の表示に対応。
+- プライバシーポリシーと404ページにも共通デザインを適用。会社情報とポリシー本文は維持。
+
+この改修は2026年9月19日に GitHub リポジトリ（aile175/my-website）の `redesign-v3` ブランチへ反映しました。`main` へのマージで GitHub Pages の公開サイトに反映されます。
+
 ## ディレクトリ構成
 
 ```
-sakura-kogyo-v2/
+sakura-kogyo-v3/
 ├── .nojekyll
 ├── 404.html
+├── CNAME
 ├── README.md
 ├── assets/
 │   ├── css/
@@ -51,7 +62,7 @@ sakura-kogyo-v2/
 │   ├── images/
 │   │   ├── favicon/
 │   │   ├── ogp.jpg
-│   │   └── (実績画像 / イメージ画像)
+│   │   └── infrastructure.svg
 │   └── js/
 │       └── main.js
 ├── index.html
@@ -64,10 +75,10 @@ sakura-kogyo-v2/
 
 ```bash
 # プロジェクトルートで簡易サーバーを起動（Python 3 の場合）
-python -m http.server 8000
+python3 -m http.server 8000 --bind 127.0.0.1
 
 # ブラウザで確認
-open http://localhost:8000
+open http://127.0.0.1:8000
 ```
 
 ## ライセンス
